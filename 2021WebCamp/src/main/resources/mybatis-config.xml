@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="csee"
+			type="com.mycompany.myapp.csee.CseeVO" />
+		<typeAlias alias="popular"
+			type="com.mycompany.myapp.popular.PopularVO" />
+		<typeAlias alias="hot"
+			type="com.mycompany.myapp.hot.HotVO" />
+		<typeAlias alias="class"
+			type="com.mycompany.myapp.classes.ClassVO" />
+		<typeAlias alias="memver"
+			type="com.mycompany.myapp.member.MemberVO" />
+	</typeAliases>
+</configuration>

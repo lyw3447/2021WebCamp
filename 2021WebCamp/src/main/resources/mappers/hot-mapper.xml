@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Hot">
+	<insert id="insertHot">
+		insert into hot (title, writer, content)
+		values
+		(#{title} , #{writer} , #{content})
+	</insert>
+	<update id="updateHot">
+		update hot
+		set title=#{title}, content=#{content},
+		writer=#{writer},
+		category=#{category} where seq=#{seq}
+	</update>
+	<delete id="deleteHot">
+		delete from hot where seq=#{seq}
+	</delete>
+	<select id="getHot" resultType="hot">
+		select * from hot where
+		seq=#{seq}
+	</select>
+	<select id="getHotList" resultType="hot">
+		select * from hot order
+		by
+		seq desc
+	</select>
+</mapper>

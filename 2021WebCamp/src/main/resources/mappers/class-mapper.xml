@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Class">
+	<insert id="insertClass">
+		insert into class (title, writer, content)
+		values
+		(#{title} , #{writer} , #{content})
+	</insert>
+	<update id="updateClass">
+		update class
+		set title=#{title}, content=#{content},
+		writer=#{writer},
+		category=#{category} where seq=#{seq}
+	</update>
+	<delete id="deleteClass">
+		delete from class where seq=#{seq}
+	</delete>
+	<select id="getClass" resultType="class">
+		select * from class where
+		seq=#{seq}
+	</select>
+	<select id="getClassList" resultType="class">
+		select * from class order
+		by seq desc
+	</select>
+</mapper>
