@@ -11,6 +11,7 @@
 <style>
 .head {
 	padding: 15px 60px;
+	border-bottom: 1px solid lightgrey;
 }
 
 ul {
@@ -50,13 +51,6 @@ img {
 	margin: 0px;
 }
 
-.icons {
-	width: 40px;
-	position: fixed;
-	left: 90%;
-	top: 12px;
-}
-
 .left {
 	float: left;
 	width: 60%;
@@ -64,10 +58,82 @@ img {
 }
 
 h3 {
+	border: 1px solid lightgrey;
+	padding: 15px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+.icons {
+	position: fixed;
+	top: 28px;
+	left: 85%;
+}
+
+.icon {
+	border: 1px solid lightgrey;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.new {
 	border: 2px solid lightgrey;
-	padding: 13px;
+	padding: 0px 15px;
+	margin-bottom: 5px;
+}
+
+.newpost {
+	font-size: 13px;
+	color: grey;
+}
+
+.fa-pencil {
+	float: right;
+}
+
+.hide {
+	border: 2px solid lightgrey;
+	color: grey;
+}
+
+h4 {
+	margin: 15px;
+}
+
+.content {
+	border-top: 1px solid lightgrey;
+	padding: 15px;
+}
+
+.icons2 {
+	border-top: 1px solid lightgrey;
+	height: 30px;
+	padding-left: 15px;
+}
+
+.icon2 {
+	padding: 7px;
+}
+
+.icons2 .fa-pencil {
+	background-color: red;
+	color: white;
+	width: 20px;
+	height: 20px;
+	padding: 6px;
 }
 </style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".new").click(function() {
+			$(".new").hide();
+			$(".hide").show();
+		});
+
+	});
+</script>
 <script>
 	function delete_ok(id) {
 		var a = confirm("정말 삭제하시겠습니까? " + id + "?");
@@ -98,16 +164,42 @@ h3 {
 		</ul>
 
 		<div class="icons">
-			<i class="fa fa-envelope-o" aria-hidden="true"></i> 
-			<i class="fa fa-user-o" aria-hidden="true"></i>
+			<i class="fa fa-envelope-o icon" aria-hidden="true"></i> <i
+				class="fa fa-user-o icon" aria-hidden="true"></i>
 		</div>
+
 
 	</div>
 
 	<div class="left">
 		<h3>자유게시판</h3>
-		<div class="new"></div>
+		<div class="new">
+			<p class="newpost">
+				새 글을 작성해 주세요!<i class="fa fa-pencil" aria-hidden="true"></i>
+			</p>
+		</div>
 
+		<h1>새로운 글 작성</h1>
+		<form action="addok" method="post">
+			<input type="text" name="title" value="글 제목" />
+			<textarea cols="100" rows="1000" name="content"></textarea>
+			<input type="submit" value="add" />
+		</form>
+
+		<div class="hide">
+			<h4>글 제목</h4>
+			<div class="content">
+				<p>[커뮤니티 이용규칙 준수]</p>
+			</div>
+			<div class="icons2">
+				<i class="fa fa-code icon2" aria-hidden="true"></i> <i
+					class="fa fa-upload icon2" aria-hidden="true"></i> <i
+					class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+			</div>
+
+		</div>
+
+		<div class="contents"></div>
 
 	</div>
 
@@ -119,14 +211,6 @@ h3 {
 
 
 	<table id="list" width="90%">
-		<tr>
-			<th>Title</th>
-			<th>Writer</th>
-			<th>Content</th>
-			<th>Regdate</th>
-			<th>Edit</th>
-			<th>Delete</th>
-		</tr>
 
 		<c:forEach items="${list}" var="u">
 			<tr>
@@ -135,32 +219,10 @@ h3 {
 				<td>${u.content}</td>
 				<td>${u.regdate}</td>
 				<td><a href="detail/${u.seq}">View</a></td>
-				<td><a href="editform/${u.seq}">Edit</a></td>
-				<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
 
-	<h1>새로운 글 작성</h1>
-	<form action="addok" method="post">
-		<table>
-			<tr>
-				<td>Title:</td>
-				<td><input type="text" name="title" /></td>
-			</tr>
-			<tr>
-				<td>Writer:</td>
-				<td><input type="text" name="writer" /></td>
-			</tr>
-			<tr>
-				<td>Content:</td>
-				<td><textarea cols="50" rows="5" name="content"></textarea></td>
-			</tr>
-			<tr>
-				<td align="right"><input type="submit" value="add" /></td>
-			</tr>
-		</table>
-	</form>
 
 </body>
 </html>
