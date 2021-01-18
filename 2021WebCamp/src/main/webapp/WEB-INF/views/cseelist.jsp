@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Everytime</title>
+<title>Every Time</title>
 <style>
 .head {
 	padding: 15px 60px;
@@ -120,7 +120,6 @@ h3 {
 
 	<table id="list" width="90%">
 		<tr>
-			<th>Id</th>
 			<th>Title</th>
 			<th>Writer</th>
 			<th>Content</th>
@@ -131,11 +130,11 @@ h3 {
 
 		<c:forEach items="${list}" var="u">
 			<tr>
-				<td>${u.seq}</td>
 				<td>${u.title}</td>
 				<td>${u.writer}</td>
 				<td>${u.content}</td>
 				<td>${u.regdate}</td>
+				<td><a href="detail/${u.seq}">View</a></td>
 				<td><a href="editform/${u.seq}">Edit</a></td>
 				<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
 			</tr>

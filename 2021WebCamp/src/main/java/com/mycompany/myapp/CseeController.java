@@ -23,6 +23,13 @@ public class CseeController {
 		return "cseelist";
 	}
 	
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public String detail(@PathVariable("id") int id, Model model) {
+		CseeVO cseeVO = cseeService.getCsee(id);
+		model.addAttribute("u", cseeVO);
+		return "detail"; 
+	}
+	
 	@RequestMapping(value = "/addok", method = RequestMethod.POST)
 	public String addPostOK(CseeVO vo) {
 		if (cseeService.insertCsee(vo) == 0)
