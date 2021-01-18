@@ -98,7 +98,8 @@ h3 {
 		</ul>
 
 		<div class="icons">
-			<i class="far fa-envelope"></i> <i class="far fa-user"></i>
+			<i class="fa fa-envelope-o" aria-hidden="true"></i> 
+			<i class="fa fa-user-o" aria-hidden="true"></i>
 		</div>
 
 	</div>
