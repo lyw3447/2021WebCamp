@@ -9,9 +9,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Every Time</title>
 <style>
-.head {
+.header {
 	padding: 15px 60px;
 	border-bottom: 1px solid lightgrey;
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background: white;
+	top: 0px;
 }
 
 ul {
@@ -34,7 +39,7 @@ li a {
 	font-weight: bold;
 }
 
-img {
+img { /*Logo*/
 	width: 55px;
 	float: left;
 }
@@ -55,6 +60,7 @@ img {
 	float: left;
 	width: 60%;
 	margin-left: 60px;
+	padding-top: 100px;
 }
 
 h3 {
@@ -96,8 +102,22 @@ h3 {
 	color: grey;
 }
 
-h4 {
+.title {
 	margin: 15px;
+	font-size: 15px;
+}
+
+.no-border {
+	border: none;
+}
+
+textarea {
+	width: 95%;
+	height: 300px;
+}
+
+.no-border:focus {
+	outline: none;
 }
 
 .content {
@@ -115,12 +135,29 @@ h4 {
 	padding: 7px;
 }
 
-.icons2 .fa-pencil {
+.submit {
+	font-family: FontAwesome;
 	background-color: red;
 	color: white;
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
 	padding: 6px;
+	float: right;
+}
+
+#list {
+	border: 1px solid lightgrey;
+	margin-top: 5px;
+	padding: 15px;
+	width: 100%;
+}
+
+.div-search {
+	border: 2px solid lightgrey;
+	border-radius: 2px;
+	width: 30%;
+	height: 30px;
+	margin-top: 5px;
 }
 </style>
 <script
@@ -134,13 +171,6 @@ h4 {
 
 	});
 </script>
-<script>
-	function delete_ok(id) {
-		var a = confirm("정말 삭제하시겠습니까? " + id + "?");
-		if (a)
-			location.href = 'deleteok/' + id;
-	}
-</script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -148,7 +178,8 @@ h4 {
 </head>
 <body>
 
-	<div class="head">
+	<div class="header">
+		<!-- 상단 메뉴 -->
 		<img src="https://img.apksum.com/1c/com.everytime.v2/5.3.5/icon.png" />
 		<p class="logo everytime">에브리타임</p>
 		<p class="logo hgu">한동대</p>
@@ -167,11 +198,10 @@ h4 {
 			<i class="fa fa-envelope-o icon" aria-hidden="true"></i> <i
 				class="fa fa-user-o icon" aria-hidden="true"></i>
 		</div>
-
-
 	</div>
 
 	<div class="left">
+		<!-- 왼쪽 게시글 작성form & 게시글 list -->
 		<h3>자유게시판</h3>
 		<div class="new">
 			<p class="newpost">
@@ -179,49 +209,61 @@ h4 {
 			</p>
 		</div>
 
-		<h1>새로운 글 작성</h1>
-		<form action="addok" method="post">
-			<input type="text" name="title" value="글 제목" />
-			<textarea cols="100" rows="1000" name="content"></textarea>
-			<input type="submit" value="add" />
-		</form>
 
 		<div class="hide">
-			<h4>글 제목</h4>
-			<div class="content">
-				<p>[커뮤니티 이용규칙 준수]</p>
-			</div>
-			<div class="icons2">
-				<i class="fa fa-code icon2" aria-hidden="true"></i> <i
-					class="fa fa-upload icon2" aria-hidden="true"></i> <i
-					class="fa fa-pencil fa-lg" aria-hidden="true"></i>
-			</div>
+
+			<!-- 작성 form -->
+
+			<form action="addok" method="post">
+
+				<input type="text" name="title" placeholder="글 제목"
+					class="no-border title" />
+
+				<div class="content">
+					<textarea name="content" class="no-border"
+						placeholder="여기를 눌러서 글을 작성할 수 있습니다."></textarea>
+				</div>
+
+				<div class="icons2">
+					<i class="fa fa-code icon2" aria-hidden="true"></i> <i
+						class="fa fa-upload icon2" aria-hidden="true"></i> <input
+						type="submit" value="&#xf002;" class="search submit" />
+				</div>
+			</form>
+		</div>
+
+		<div class="contents">
+			<!-- 게시글 list -->
+
+			<table id="list" width="90%">
+
+				<c:forEach items="${list}" var="u">
+					<tr>
+						<td>${u.title}</td>
+						<td>${u.writer}</td>
+						<td>${u.content}</td>
+						<td>${u.regdate}</td>
+						<td><a href="detail/${u.seq}">View</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+
 
 		</div>
 
-		<div class="contents"></div>
+		<div class="div-search">
+			<!-- <input type="text" placeholder="검색어를 입력하세요." class="no-border" /> -->
+		</div>
 
 	</div>
 
 	<div class="right"></div>
 
-	<div class="footer"></div>
+	<div class="footer">
+		<p>이용약관 개인정보처리방침 커뮤니티이용규칙 공지사항 문의하기 에브리타임</p>
+	</div>
 
 
-
-
-	<table id="list" width="90%">
-
-		<c:forEach items="${list}" var="u">
-			<tr>
-				<td>${u.title}</td>
-				<td>${u.writer}</td>
-				<td>${u.content}</td>
-				<td>${u.regdate}</td>
-				<td><a href="detail/${u.seq}">View</a></td>
-			</tr>
-		</c:forEach>
-	</table>
 
 
 </body>
