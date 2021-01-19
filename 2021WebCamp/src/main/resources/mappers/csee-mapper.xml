@@ -9,8 +9,7 @@
 	<update id="updateCsee">
 		update csee
 		set title=#{title}, content=#{content},
-		writer=#{writer},
-		category=#{category} where seq=#{seq}
+		writer=#{writer} where seq=#{seq}
 	</update>
 	<delete id="deleteCsee">
 		delete from csee where seq=#{seq}
@@ -21,6 +20,7 @@
 	</select>
 	<select id="getCseeList" resultType="csee">
 		select * from csee order
-		by seq desc
+		by
+		seq desc
 	</select>
 </mapper>
