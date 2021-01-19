@@ -86,6 +86,7 @@ h3 {
 	border: 2px solid lightgrey;
 	padding: 0px 15px;
 	margin-bottom: 5px;
+	background-color: #F0F0F0;
 }
 
 .newpost {
@@ -93,13 +94,12 @@ h3 {
 	color: grey;
 }
 
-.fa-pencil {
-	float: right;
-}
+.fa-pencil {float: right;}
 
 .hide {
 	border: 2px solid lightgrey;
 	color: grey;
+    display: none;
 }
 
 .title {
@@ -107,18 +107,14 @@ h3 {
 	font-size: 15px;
 }
 
-.no-border {
-	border: none;
-}
+.no-border {border: none;}
 
 textarea {
 	width: 95%;
 	height: 300px;
 }
 
-.no-border:focus {
-	outline: none;
-}
+.no-border:focus {outline: none;}
 
 .content {
 	border-top: 1px solid lightgrey;
@@ -158,7 +154,49 @@ textarea {
 	width: 30%;
 	height: 30px;
 	margin-top: 5px;
+    margin-bottom: 30px;
 }
+
+span {font-weight: bold;}
+
+.right {
+	padding-top: 100px;
+    width: 30%;
+    float: left;
+}
+
+.boxes {
+	border: 1px solid lightgrey;
+    margin: 20px;
+}
+
+.right .title {
+	font-weight: bold;
+    color: #0000CD;
+    font-size: 14px;
+    height: 10px;
+}
+
+.right .content {
+	font-size: 13px;
+}
+
+.footer {
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer a {
+	text-decoration: none;
+    color: grey;
+    font-size: 13px;
+    padding: 3px;
+}
+
+
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -248,23 +286,52 @@ textarea {
 				</c:forEach>
 			</table>
 
-
 		</div>
 
 		<div class="div-search">
-			<!-- <input type="text" placeholder="검색어를 입력하세요." class="no-border" /> -->
+			<input type="text" placeholder="검색어를 입력하세요." class="no-border" /> 
 		</div>
 
 	</div>
 
-	<div class="right"></div>
+	<div class="right">
+    	<div class="boxes">
+        	<p class="title">실시간 인기 글</p>
+            <p class="content">이곳은 실시간 인기 첫 번째 글입니다. </p>
+            <p class="content">이곳은 실시간 인기 두 번째 글입니다. </p>
+        </div>
+    	
+        <div class="boxes">
+        	<p class="title">HOT 게시물</p>
+            <p class="content">이곳은 HOT 게시물 첫 번째 글입니다. </p>
+            <p class="content">이곳은 HOT 게시물 두 번째 글입니다. </p>
+            <p class="content">이곳은 HOT 게시물 세 번째 글입니다. </p>
+            <p class="content">이곳은 HOT 게시물 네 번째 글입니다. </p>
+        </div>
+        
+        <div class="boxes">
+        	<p class="title">BEST 게시판</p>
+        </div>
+        
+        <div class="boxes">
+        	<p class="title">최근 강의평</p>
+            <p class="content"> </p>
+            <p class="content"> </p>
+            <p class="content"> </p>
+            <p class="content"> </p>
+            
+        </div>
+        
+    </div>
 
 	<div class="footer">
-		<p>이용약관 개인정보처리방침 커뮤니티이용규칙 공지사항 문의하기 에브리타임</p>
+		<a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">커뮤니티이용규칙</a>
+        <a href="#">공지사항</a>
+        <a href="#">문의하기</a>
+        <a href="#"><span>&copy; 에브리타임</span></a>
 	</div>
-
-
-
 
 </body>
 </html>
