@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Every Time</title>
+<title>에브리타임</title>
 <style>
 html, body {
 	height: 100%;
@@ -40,9 +40,9 @@ li {
 }
 
 li :hover {
-	border-bottom: 2px solid red;
+	border-bottom: 2px solid #c12525;
 	padding-bottom: 32px;
-	color: red;
+	color: #c12525;
 }
 
 li a {
@@ -58,48 +58,16 @@ img { /*Logo*/
 }
 
 .everytime {
-	color: red;
+	color: #c12525;
 	font-size: 12px;
 	padding-top: 10px;
 	margin: 0 59px;
+	font-weight: bold;
 }
 
 .hgu {
 	font-size: 23px;
 	margin: 0px;
-}
-
-.menu {
-	background-color: #F5F5F5;
-	width: 100%;
-	height: 300px;
-	padding: 0;
-	margin: 0;
-	border-bottom: 1px solid lightgrey;
-}
-
-.page-wrap {
-	min-height: 100%;
-	margin-bottom: -142px;
-}
-
-.page-wrap:after {
-	content: "";
-	display: block;
-}
-
-.left {
-	float: left;
-	width: 55%;
-	margin-left: 10%;
-	padding-top: 15px;
-}
-
-h3 {
-	border: 1px solid lightgrey;
-	padding: 15px;
-	margin-top: 20px;
-	margin-bottom: 5px;
 }
 
 .icons {
@@ -112,6 +80,38 @@ h3 {
 	border: 1px solid lightgrey;
 	border-radius: 10px;
 	padding: 10px;
+}
+
+.menu {
+	background-color: #F5F5F5;
+	width: 100%;
+	height: 300px;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid lightgrey;
+	margin-bottom: 20px;
+}
+
+.page-wrap {
+	min-height: 100%;
+	margin-bottom: -100px;
+}
+
+.page-wrap:after {
+	content: "";
+	display: block;
+}
+
+.left {
+	float: left;
+	width: 55%;
+	margin-left: 10%;
+}
+
+h2 {
+	border: 1px solid lightgrey;
+	padding: 15px;
+	margin: 5px 0;
 }
 
 .new {
@@ -146,13 +146,13 @@ h3 {
 	border: none;
 }
 
+.no-border:focus {
+	outline: none;
+}
+
 textarea {
 	width: 95%;
 	height: 300px;
-}
-
-.no-border:focus {
-	outline: none;
 }
 
 .content {
@@ -171,7 +171,7 @@ textarea {
 }
 
 .btn {
-	background-color: red;
+	background-color: #c12525;
 	color: white;
 	padding: 10px;
 	width: 45px;
@@ -242,39 +242,48 @@ span {
 }
 
 .right {
-	padding-top: 15px;
 	width: 25%;
 	float: left;
 }
 
 .boxes {
 	border: 1px solid lightgrey;
-	margin: 20px;
+	margin: 5px 20px;
 	background-color: #F8F8F8;
 }
 
-.right .title {
+.boxes .title {
 	font-weight: bold;
 	color: #0000CD;
 	font-size: 14px;
+	margin: 15px;
 }
 
-.right .content {
+.boxes .content {
 	font-size: 13px;
 	height: 30px;
 }
 
+.hot .content {
+	padding-left: 15px;
+	height: 5px;
+}
+
 .footer {
+	position: absolute;
 	bottom: 0;
-	float: left;
 	margin-left: 35%;
 }
 
 .footer a {
 	text-decoration: none;
 	color: grey;
-	font-size: 13px;
+	font-size: 12px;
 	padding: 3px;
+}
+
+.footer a:hover {
+	color: #c12525;
 }
 </style>
 <script
@@ -322,7 +331,7 @@ span {
 	<div class="page-wrap">
 		<div class="left">
 			<!-- 왼쪽 게시글 작성form & 게시글 list -->
-			<h3>자유게시판</h3>
+			<h2>자유게시판</h2>
 			<div class="new">
 				<p class="newpost">
 					새 글을 작성해 주세요!<i class="fa fa-pencil" aria-hidden="true"></i>
@@ -349,7 +358,8 @@ span {
 							class="fa fa-upload icon2" aria-hidden="true"></i>
 
 						<button type="submit" class="btn submit">
-							<i class="fa fa-pencil" aria-hidden="true" style="font-size: 23px; margin-left: 0; text-align: center;"></i>
+							<i class="fa fa-pencil" aria-hidden="true"
+								style="font-size: 23px; margin-left: 0; text-align: center;"></i>
 						</button>
 					</div>
 				</form>
@@ -380,13 +390,13 @@ span {
 		</div>
 
 		<div class="right">
-			<div class="boxes">
+			<div class="boxes popular">
 				<p class="title">실시간 인기 글</p>
 				<p class="content">이곳은 실시간 인기 첫 번째 글입니다. 안녕하세요</p>
 				<p class="content">이곳은 실시간 인기 두 번째 글입니다.</p>
 			</div>
 
-			<div class="boxes">
+			<div class="boxes hot">
 				<p class="title">HOT 게시물</p>
 				<p class="content">이곳은 HOT 게시물 첫 번째 글입니다.</p>
 				<p class="content">이곳은 HOT 게시물 두 번째 글입니다.</p>
