@@ -9,9 +9,9 @@
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver"></property>
 		<property name="url"
-			value="jdbc:mysql://db4free.net:3306/sql12388015"></property>
-		<property name="username" value="sql12388015"></property>
-		<property name="password" value="pRMUFHqZlb"></property>
+			value="jdbc:mysql://db4free.net:3306/yewonlee"></property>
+		<property name="username" value="yewonlee"></property>
+		<property name="password" value="yewonlee12"></property>
 	</bean>
 
 	<bean id="sqlSessionFactory"
