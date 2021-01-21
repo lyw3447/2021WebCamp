@@ -13,6 +13,12 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	font-family: "맑은 고딕", 돋움, tahoma;
+	letter-spacing: -0.5px;
+}
+
+body {
+	padding-top: 90px;
 }
 
 .header {
@@ -25,48 +31,58 @@ html, body {
 	top: 0px;
 }
 
-ul {
+.header ul {
 	list-style-type: none;
 	overflow: hidden;
 	position: fixed;
-	left: 30%;
+	left: 35%;
 	top: 12px;
 }
 
-li {
+.header li {
 	float: left;
 	padding: 10px;
 	height: 100%;
 }
 
-li :hover {
-	border-bottom: 2px solid #c12525;
-	padding-bottom: 32px;
+.header li :hover {
 	color: #c12525;
 }
 
-li a {
+.header li a {
 	text-decoration: none;
 	color: black;
 	display: block;
 	font-weight: bold;
 }
 
+.header .here {
+	border-bottom: 5px solid #c12525;
+	padding-bottom: 26px;
+	color: #c12525;
+}
+
 img { /*Logo*/
-	width: 55px;
+	width: 60px;
+	height: 60px;
 	float: left;
+}
+
+.logo-side {
+	float: left;
+	margin: 10px 0 0 5px;
 }
 
 .everytime {
 	color: #c12525;
 	font-size: 12px;
-	padding-top: 10px;
-	margin: 0 59px;
+	margin: 0;
+	padding-left: 3px;
 	font-weight: bold;
 }
 
 .hgu {
-	font-size: 23px;
+	font-size: 22px;
 	margin: 0px;
 }
 
@@ -85,16 +101,49 @@ img { /*Logo*/
 .menu {
 	background-color: #F5F5F5;
 	width: 100%;
-	height: 300px;
-	padding: 0;
-	margin: 0;
+	height: 200px;
+	padding-left: 30%;
 	border-bottom: 1px solid lightgrey;
 	margin-bottom: 20px;
 }
 
+.menu ul {
+	float: left;
+	list-style-type: none;
+	overflow: auto;
+	margin: 16px 90px 16px 15px;
+	padding-left: 0;
+}
+
+.menu li {
+	padding: 2px;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: black;
+	font-size: 13px;
+}
+
+.menu li a:hover{
+	color: #c12525;
+}
+
+.menu .here {
+	color: #c12525;
+	font-weight: bold;
+}
+
+.border {
+	border-left: 1px solid lightgrey;
+	float: left;
+	height: 80%;
+	margin-top: 20px;
+}
+
 .page-wrap {
 	min-height: 100%;
-	margin-bottom: -100px;
+	margin-bottom: 100px;
 }
 
 .page-wrap:after {
@@ -105,7 +154,7 @@ img { /*Logo*/
 .left {
 	float: left;
 	width: 55%;
-	margin-left: 10%;
+	margin-left: 13%;
 }
 
 h2 {
@@ -168,6 +217,15 @@ textarea {
 
 .icon2 {
 	padding: 15px;
+}
+
+.writer {
+	width: 30px;
+	float: right;
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid lightgrey;
+	border-radius: 3px;
 }
 
 .btn {
@@ -270,8 +328,7 @@ span {
 }
 
 .footer {
-	position: absolute;
-	bottom: 0;
+	float: left;
 	margin-left: 35%;
 }
 
@@ -306,12 +363,15 @@ span {
 
 	<div class="header">
 		<!-- 상단 메뉴 -->
+
 		<img src="https://img.apksum.com/1c/com.everytime.v2/5.3.5/icon.png" />
-		<p class="everytime">에브리타임</p>
-		<p class="hgu">한동대</p>
+		<div class="logo-side">
+			<p class="everytime">에브리타임</p>
+			<p class="hgu">한동대</p>
+		</div>
 
 		<ul>
-			<li><a href="#">게시판</a></li>
+			<li><a href="csee" class="here">게시판</a></li>
 			<li><a href="#">시간표</a></li>
 			<li><a href="#">강의평가</a></li>
 			<li><a href="#">학점계산기</a></li>
@@ -326,7 +386,52 @@ span {
 		</div>
 	</div>
 
-	<div class="menu"></div>
+	<div class="menu">
+		<div class="border"></div>
+		<ul>
+			<li><a href="csee" class="here">자유게시판</a></li>
+			<li><a href="#">비밀게시판</a></li>
+			<li><a href="#">졸업생게시판</a></li>
+			<li><a href="#">새내기게시판</a></li>
+			<li><a href="#">장터게시판</a></li>
+			<li><a href="#">홍보게시판</a></li>
+			<li><a href="#">동아리/학회</a></li>
+		</ul>
+		<div class="border"></div>
+		<ul>
+			<li><a href="#">정보게시판</a></li>
+			<li><a href="#">취업/진로</a></li>
+		</ul>
+		<div class="border"></div>
+		<ul>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+		</ul>
+		<ul>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+		</ul>
+		<ul>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">게시판</a></li>
+		</ul>
+		<div class="border"></div>
+	</div>
 
 	<div class="page-wrap">
 		<div class="left">
@@ -361,6 +466,9 @@ span {
 							<i class="fa fa-pencil" aria-hidden="true"
 								style="font-size: 23px; margin-left: 0; text-align: center;"></i>
 						</button>
+						<input type="text" name="writer" class="writer" />
+
+
 					</div>
 				</form>
 			</div>
