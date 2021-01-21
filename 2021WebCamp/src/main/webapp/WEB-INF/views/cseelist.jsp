@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>에브리타임</title>
+<title>Everyday</title>
 <style>
 html, body {
 	height: 100%;
@@ -62,10 +62,10 @@ body {
 	color: #c12525;
 }
 
-img { /*Logo*/
-	width: 60px;
-	height: 60px;
+.fa-calendar { /*Logo*/
 	float: left;
+	color: #c12525;
+	padding: 12px;
 }
 
 .logo-side {
@@ -77,13 +77,13 @@ img { /*Logo*/
 	color: #c12525;
 	font-size: 12px;
 	margin: 0;
-	padding-left: 3px;
 	font-weight: bold;
 }
 
 .hgu {
-	font-size: 22px;
+	font-size: 24px;
 	margin: 0px;
+	padding-left: 2px;
 }
 
 .icons {
@@ -100,7 +100,6 @@ img { /*Logo*/
 
 .menu {
 	background-color: #F5F5F5;
-	width: 100%;
 	height: 200px;
 	padding-left: 30%;
 	border-bottom: 1px solid lightgrey;
@@ -125,7 +124,7 @@ img { /*Logo*/
 	font-size: 13px;
 }
 
-.menu li a:hover{
+.menu li a:hover {
 	color: #c12525;
 }
 
@@ -342,6 +341,13 @@ span {
 .footer a:hover {
 	color: #c12525;
 }
+
+.sample {
+	color: grey;
+	float: right;
+	font-style: italic;
+	margin: 5px;
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -364,10 +370,10 @@ span {
 	<div class="header">
 		<!-- 상단 메뉴 -->
 
-		<img src="https://img.apksum.com/1c/com.everytime.v2/5.3.5/icon.png" />
+		<i class="fa fa-calendar" aria-hidden="true" style="font-size: 34px;"></i>
 		<div class="logo-side">
-			<p class="everytime">에브리타임</p>
-			<p class="hgu">한동대</p>
+			<p class="everytime">Everyday</p>
+			<p class="hgu">HGU</p>
 		</div>
 
 		<ul>
@@ -531,8 +537,10 @@ span {
 	<div class="footer">
 		<a href="#">이용약관</a> <a href="#">개인정보처리방침</a> <a href="#">커뮤니티이용규칙</a>
 		<a href="#">공지사항</a> <a href="#">문의하기</a> <a href="#"><span>&copy;
-				에브리타임</span></a>
+				에브리데이</span></a>
+
 	</div>
+	<p class="sample">이 웹사이트는 웹서비스 개발 연습 목적으로 만들어졌습니다.</p>
 
 </body>
 </html>
