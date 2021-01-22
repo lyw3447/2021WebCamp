@@ -12,7 +12,7 @@
 			type="com.mycompany.myapp.hot.HotVO" />
 		<typeAlias alias="class"
 			type="com.mycompany.myapp.classes.ClassVO" />
-		<typeAlias alias="memver"
+		<typeAlias alias="member"
 			type="com.mycompany.myapp.member.MemberVO" />
 	</typeAliases>
 </configuration>
