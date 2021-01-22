@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Members">
-<insert id="insertMembers">
+<mapper namespace="Member">
+	<insert id="insertMember">
 		insert into members (userid, username, password)
 		values
 		(#{userid} , #{username} , #{password})
 	</insert>
-	<update id="updateMembers">
+	<update id="updateMember">
 		update members
-		set userid=#{userid}, username=#{username},
+		set userid=#{userid},
+		username=#{username},
 		password=#{password} where seq=#{seq}
 	</update>
-	<delete id="deleteMembers">
+	<delete id="deleteMember">
 		delete from members where seq=#{seq}
 	</delete>
-	<select id="getMembers" resultType="member">
+	<select id="getMember" resultType="member">
 		select * from members where
 		seq=#{seq}
 	</select>
-	
-	<!-- 
-	<select id="getMembersList" resultType="members">
-		select * from members order
-		by
-		seq desc
-	</select>
-	 -->
-	
-	
+
+	<!-- <select id="getMembersList" resultType="members"> select * from members 
+		order by seq desc </select> -->
+
+
 </mapper>
