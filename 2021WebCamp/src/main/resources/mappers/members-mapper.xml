@@ -10,14 +10,14 @@
 		update members
 		set userid=#{userid},
 		username=#{username},
-		password=#{password} where sid=#{sid}
+		password=#{password} where userid=#{userid}
 	</update>
 	<delete id="deleteMember">
-		delete from members where sid=#{sid}
+		delete from members where userid=#{userid}
 	</delete>
 	<select id="getMember" resultType="member">
 		select * from members where
-		sid=#{sid}
+		userid=#{userid}
 	</select>
 
 	<!-- <select id="getMembersList" resultType="members"> select * from members 
