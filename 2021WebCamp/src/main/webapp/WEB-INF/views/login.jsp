@@ -13,19 +13,37 @@ body {
 
 .login {
 	text-align: center;
+	margin-top: 20%;
 }
 
 .fa-calendar { /*Logo*/
 	color: #c12525;
-	padding: 12px;
+	padding: 0 50px 10px 0;
 }
 
-input[type="text"] {
-	
+.top p {
+	color: grey;
+	display: inline;
 }
 
-input[type="text"]:focus {
+input {
+	border: 1px solid lightgrey;
+	width: 300px;
+	height: 30px;
+	margin: 2px;
+}
+
+input:focus {
 	outline: none;
+}
+
+button {
+	width: 306px;
+	height: 30px;
+	background-color: #c12525;
+	color: white;
+	border: none;
+	margin: 2px;
 }
 
 p a {
@@ -34,11 +52,14 @@ p a {
 }
 
 .footer {
-	background-color: #F5F5F5;
-	border-top: 1px solid lightrgrey;
+	background-color: #f8f8f8;
+	border-top: 1px solid #e3e3e3;
 	text-align: center;
-	padding: 10px;
+	padding: 20px;
 	font-size: 13px;
+	bottom: 0;
+	position: fixed;
+	width: 100%;
 }
 
 a {
@@ -52,9 +73,11 @@ a {
 
 .sample {
 	color: grey;
-	float: right;
 	font-style: italic;
-	margin: 5px;
+	position: absolute;
+	width: 98%;
+	text-align: right;
+	bottom: 55px;
 }
 </style>
 <link rel="stylesheet"
@@ -65,8 +88,13 @@ a {
 <body>
 	<!-- <img src='../img/snowman.jpg' height="250"> -->
 	<div class="login">
-	<i class="fa fa-calendar" aria-hidden="true" style="font-size: 40px;"></i>
-		<p style="color: grey;">지금 <span style="font-weight: bold;">에브리데이</span>를 시작하세요!</p>
+		<div class="top">
+			<i class="fa fa-calendar" aria-hidden="true" style="font-size: 45px;"></i>
+			<p>
+				지금 <span style="font-weight: bold;">에브리데이</span>를 시작하세요!
+			</p>
+		</div>
+
 		<form method="post" action="loginOk">
 			<div>
 				<input type='text' name='userid' />
@@ -76,7 +104,7 @@ a {
 			</div>
 			<button type='submit'>로그인</button>
 		</form>
-		<p>
+		<p style="color: grey">
 			에브리데이에 처음이신가요? <a href="#">회원가입</a>
 		</p>
 	</div>
