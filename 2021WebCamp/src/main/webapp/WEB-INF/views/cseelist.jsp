@@ -494,10 +494,12 @@ span {
 			</div>
 
 			<div class="div-search">
-
-				<input type="text" placeholder="검색어를 입력하세요."
-					class="no-border search-bt" /> <input type="submit"
-					value="&#xf002;" class="search " />
+				<form id="searchForm" action="csee" method="get"
+					style="margin: 0; padding: 0">
+					<input type="text" placeholder="검색어를 입력하세요."
+						class="no-border search-bt" /> <input type="submit"
+						value="&#xf002;" class="search " />
+				</form>
 
 			</div>
 
