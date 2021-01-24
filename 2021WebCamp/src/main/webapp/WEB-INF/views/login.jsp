@@ -97,10 +97,10 @@ a {
 
 		<form method="post" action="loginOk">
 			<div>
-				<input type='text' name='userid' />
+				<input type='text' name='userid' value="admin"/>
 			</div>
 			<div>
-				<input type='password' name='password' />
+				<input type='password' name='password' value="1234"/>
 			</div>
 			<button type='submit'>로그인</button>
 		</form>
