@@ -18,6 +18,11 @@ public class LoginController {
 	@Autowired
 	MemberServiceImpl service;
 	
+	@RequestMapping(value="/intro", method=RequestMethod.GET)
+	public String intro(String t, Model model) {
+		return "intro";
+	}
+	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login(String t, Model model) {
 		return "login";
@@ -45,7 +50,7 @@ public class LoginController {
 		@RequestMapping(value="/logout")
 		public String logout(HttpSession session) {
 			session.invalidate();
-			return "redirect:/login/login"; 
+			return "redirect:/login/intro"; 
 		}
 
 
