@@ -63,7 +63,6 @@ h2 {
 
 .middle p, .bottom p {
 	text-align: center;
-	padding-bottom: 30px;
 	color: #444444;
 	line-height: 25px;
 }
@@ -74,23 +73,29 @@ h2 {
 }
 
 .icons {
-	display: inline;
+	text-align: center;
 }
 
 .icon {
 	background-color: #fff;
-	padding: 20px;
 	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	margin: 50px;
+}
+
+.set {
+	margin-top: 23px;
+}
+
+.scribe {
+	margin-top: 50px;
 }
 
 a {
 	text-decoration: none;
 	color: black;
-}
-
-.fa-calendar { /*Logo*/
-	color: #c12525;
-	padding-left: 20px;
 }
 
 .footer {
@@ -124,6 +129,15 @@ a {
 	display: block;
 }
 
+.fa-calendar { /*Logo*/
+	color: #c12525;
+}
+
+.cal {
+	text-align: center;
+	padding: 40px;
+}
+
 .login, .signup {
 	width: 280px;
 	height: 40px;
@@ -143,11 +157,49 @@ a {
 	font-weight: bold;
 	display: block;
 }
+
+.btn {
+	margin-bottom: 50px;
+}
+
+.list {
+	border-top: 1px solid #d6d6d6;
+	border-bottom: 1px solid #d6d6d6;
+	padding-bottom: 5px;
+}
+
+.find-school {
+	padding: 10px;
+}
+
+.search {
+	width: 80%;
+	height: 30px;
+	margin: 5px;
+	border: none;
+	background-color: #f5f5f5;
+}
+
+.search-bt {
+	font-family: FontAwesome;
+	width: 30px;
+	height: 30px;
+	border: none;
+	background: none;
+}
+
+.div-search {
+	background-color: #f5f5f5;
+	margin: 0 10px;
+	border: 1px solid #d6d6d6;
+}
 </style>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<section class="top">
@@ -166,8 +218,7 @@ a {
 
 	<section class="middle">
 		<h2>
-			대학생을 위한 <br />
-			<strong class="red">국내 1위 대학생 서비스 에브리데이! </strong>
+			대학생을 위한 <br /> <strong class="red">국내 1위 대학생 서비스 에브리데이! </strong>
 		</h2>
 		<p>
 			시간표 작성, 수업 일정 및 할일 등 편리한 <strong>학업 관리</strong>가 가능하고,<br />학식 등 유용한
@@ -181,18 +232,26 @@ a {
 
 	<section class="bottom">
 		<h2>
-			전국 캠퍼스 <br />
-			<strong class="red">재학생 커뮤니티 에브리데이!</strong>
+			전국 캠퍼스 <br /> <strong class="red">재학생 커뮤니티 에브리데이!</strong>
 		</h2>
 		<p>
-			학교 인증을 거친 재학생들의 안전한 대화를 위한 <strong>익명 시스템</strong>과<br />학생들이 직접 게시판을
-			개설하여 운영하는 <strong>커뮤니티 플랫폼</strong>을 통해<br />많은 대학교에서 가장 활발히 이용하는 재학생
-			커뮤니티로 자리잡았습니다.
+			학교 인증을 거친 재학생들의 안전한 대화를 위한 <strong>익명 시스템</strong>과<br />학생들이 직접
+			게시판을 개설하여 운영하는 <strong>커뮤니티 플랫폼</strong>을 통해<br />많은 대학교에서 가장 활발히
+			이용하는 재학생 커뮤니티로 자리잡았습니다.
 		</p>
 		<div class="icons">
-			<i class="fa fa-lock icon fa-3x" aria-hidden="true"></i>
-			<i class="fa fa-shield icon fa-3x" aria-hidden="true"></i>
-			<i class="fa fa-users icon fa-3x" aria-hidden="true"></i>
+			<div class="icon">
+				<i class="fa fa-lock fa-3x set " aria-hidden="true"></i>
+				<p class="scribe">학교 인증</p>
+			</div>
+			<div class="icon">
+				<i class="fa fa-shield fa-3x set" aria-hidden="true"></i>
+				<p class="scribe">익명 시스템</p>
+			</div>
+			<div class="icon">
+				<i class="fa fa-users fa-3x set" aria-hidden="true"></i>
+				<p class="scribe">재학생 참여</p>
+			</div>
 		</div>
 	</section>
 
@@ -210,7 +269,9 @@ a {
 
 
 	<div class="right">
-		<i class="fa fa-calendar" aria-hidden="true" style="font-size: 35px;"></i>
+		<div class="cal">
+			<i class="fa fa-calendar" aria-hidden="true" style="font-size: 35px;"></i>
+		</div>
 		<div class="btn">
 			<button type="button" class="login" onclick="location.href='login'">로그인</button>
 			<button type="button" class="signup" onclick="location.href='#'">에브리데이
@@ -218,7 +279,19 @@ a {
 		</div>
 
 		<div class="list">
-			<p>우리 학교 커뮤니티 둘러보기</p>
+			<p class="find-school">
+				<strong>우리 학교 찾기</strong>
+			</p>
+			<form id="searchForm" action="csee" method="get"
+				style="margin: 0; padding: 0">
+				<div class="div-search">
+					<input type="text" placeholder="찾으시는 학교를 검색하세요."
+						class="no-border search" /> <input type="submit" value="&#xf002;"
+						class="search-bt " />
+				</div>
+			</form>
+
+
 		</div>
 	</div>
 
