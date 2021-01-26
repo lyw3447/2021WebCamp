@@ -31,6 +31,11 @@ body {
 	top: 0px;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 .header ul {
 	list-style-type: none;
 	overflow: hidden;
@@ -50,8 +55,6 @@ body {
 }
 
 .header li a {
-	text-decoration: none;
-	color: black;
 	display: block;
 	font-weight: bold;
 }
@@ -98,12 +101,32 @@ body {
 	padding: 10px;
 }
 
+.logout {
+	display: none;
+	position: absolute;
+	width: 55px;
+	padding: 10px;
+	margin: 5px;
+	background-color: #c12525;
+	color: white;
+	border-radius: 5px;
+}
+
+.hv {
+	display: inline-block;
+}
+
+.hv:hover .logout {
+	display: block;
+}
+
 .menu {
 	background-color: #F5F5F5;
 	height: 200px;
 	padding-left: 30%;
 	border-bottom: 1px solid lightgrey;
 	margin-bottom: 20px;
+	
 }
 
 .menu ul {
@@ -119,8 +142,6 @@ body {
 }
 
 .menu li a {
-	text-decoration: none;
-	color: black;
 	font-size: 13px;
 }
 
@@ -332,7 +353,6 @@ span {
 }
 
 .footer a {
-	text-decoration: none;
 	color: grey;
 	font-size: 12px;
 	padding: 3px;
@@ -387,9 +407,14 @@ span {
 		</ul>
 
 		<div class="icons">
-			<i class="fa fa-envelope-o icon" aria-hidden="true"></i> <i
-				class="fa fa-user-o icon" aria-hidden="true"></i>
+			<i class="fa fa-envelope-o icon" aria-hidden="true"></i>
+			<div class="hv">
+				<i class="fa fa-user-o icon" aria-hidden="true"></i> <a
+					href="../login/logout" class="logout">로그아웃</a>
+			</div>
+
 		</div>
+
 	</div>
 
 	<div class="menu">
