@@ -472,7 +472,7 @@ span {
 							<i class="fa fa-pencil" aria-hidden="true"
 								style="font-size: 23px; margin-left: 0; text-align: center;"></i>
 						</button>
-						<input type="text" name="writer" class="writer" />
+						<input type="text" name="writer" class="writer" value="익명" />
 
 
 					</div>
