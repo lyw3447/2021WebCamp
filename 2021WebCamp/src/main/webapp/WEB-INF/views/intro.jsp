@@ -22,6 +22,18 @@ section {
 .top {
 	background-color: #f5f5f5;
 	height: 600px;
+	text-align: center;
+}
+
+.fa-mobile {
+	padding-top: 100px;
+	display: inline-block;
+	margin-left: -300px;
+}
+
+.top-right {
+	display: inline-block;
+	margin: 100px;
 }
 
 strong {
@@ -33,16 +45,15 @@ strong {
 }
 
 h1 {
+	width: 350px;
+	text-align: left;
 	position: absolute;
-	width: 300px;
-	top: 250px;
-	left: 450px;
+	top: 300px;
+	font-size: 28px;
 }
 
 .download {
 	position: absolute;
-	top: 350px;
-	left: 450px;
 }
 
 .google, .apple {
@@ -50,15 +61,36 @@ h1 {
 	border-radius: 5px;
 	width: 150px;
 	height: 50px;
+	color: grey;
 }
 
 .middle {
 	height: 500px;
 }
 
+.number {
+	text-align: center;
+	padding: 70px;
+}
+
+.number div {
+	display: inline-block;
+	margin: 20px;
+}
+
+.num strong {
+	font-size: 40px;
+}
+
+.line {
+	border-right: 2px solid lightgrey;
+	height: 20px;
+}
+
 h2 {
 	text-align: center;
-	padding: 50px;
+	padding: 70px;
+	font-size: 24px;
 }
 
 .middle p, .bottom p {
@@ -115,7 +147,7 @@ a {
 	color: grey;
 	font-style: italic;
 	text-align: right;
-	margin-right: 5px;
+	margin: 5px;
 }
 
 .right {
@@ -170,6 +202,7 @@ a {
 
 .find-school {
 	padding: 10px;
+	font-size: 14px;
 }
 
 .search {
@@ -178,6 +211,10 @@ a {
 	margin: 5px;
 	border: none;
 	background-color: #f5f5f5;
+}
+
+.search:focus {
+	outline: none;
 }
 
 .search-bt {
@@ -204,15 +241,16 @@ a {
 <body>
 	<section class="top">
 		<i class="fa fa-mobile fa-3x" aria-hidden="true"
-			style="font-size: 500px; padding-left: 170px; padding-top: 100px;"></i>
-		<h1>
-			대학 생활을 더 편하고 즐겁게,<strong class="red">에브리데이</strong>
-		</h1>
-		<div class="download">
-			<button type="button" class="google">PlayStore</button>
-			<button type="button" class="apple">AppStore</button>
+			style="font-size: 500px;"></i>
+		<div class="top-right">
+			<h1>
+				대학 생활을 더 편하고 즐겁게,<strong class="red">에브리데이</strong>
+			</h1>
+			<div class="download">
+				<button type="button" class="google"><strong>Google Play</strong></button>
+				<button type="button" class="apple"><strong>App Store</strong></button>
+			</div>
 		</div>
-
 
 	</section>
 
@@ -226,6 +264,42 @@ a {
 				커뮤니티</strong>를 이용할 수 있습니다.
 		</p>
 
+		<div class="number">
+			<div>
+				<p class="num">
+					<strong>100</strong>만
+				</p>
+				<p class="detail">가입한 대학생</p>
+			</div>
+			<div class="line"></div>
+			<div>
+				<p class="num">
+					<strong>200</strong>만
+				</p>
+				<p class="detail">가입한 대학생</p>
+			</div>
+			<div class="line"></div>
+			<div>
+				<p class="num">
+					<strong>300</strong>만
+				</p>
+				<p class="detail">가입한 대학생</p>
+			</div>
+			<div class="line"></div>
+			<div>
+				<p class="num">
+					<strong>400</strong>만
+				</p>
+				<p class="detail">가입한 대학생</p>
+			</div>
+			<div class="line"></div>
+			<div>
+				<p class="num">
+					<strong>500</strong>만
+				</p>
+				<p class="detail">가입한 대학생</p>
+			</div>
+		</div>
 	</section>
 
 
