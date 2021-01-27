@@ -288,9 +288,9 @@ a {
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	crossorigin="anonymous">
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
 	$(document).ready(
 			function() {
@@ -303,17 +303,19 @@ a {
 			});
 </script>
 <script>
+$(document).ready(function(){
 	$(window).scroll(function() {
 		$(".slideanim").each(function() {
 			var pos = $(this).offset().top;
 
 			var winTop = $(window).scrollTop();
-			if (pos < winTop + 600) {
+			if (pos < winTop + 800) { //이부분 screen size에 따라 다름. 다시 확인 필요?!
 				$(this).addClass("slide");
 			}
 		});
 
 	});
+}) 
 </script>
 <script>
 	$(window).scroll(testScroll);
