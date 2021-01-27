@@ -28,7 +28,19 @@ section {
 .fa-mobile {
 	padding-top: 100px;
 	display: inline-block;
-	margin-left: -300px;
+	margin-left: -400px;
+}
+
+.fa-address-book-o {
+	padding-top: 200px;
+	display: inline-block;
+	margin-left: -400px;
+}
+
+.fa-file-text-o {
+	padding-top: 200px;
+	display: inline-block;
+	margin-left: -400px;
 }
 
 .top-right {
@@ -54,6 +66,7 @@ h1 {
 
 .download {
 	position: absolute;
+	top: 400px;
 }
 
 .google, .apple {
@@ -121,6 +134,39 @@ h2 {
 	margin-top: 23px;
 }
 
+.slideanim {visibility:hidden;}
+.slide {
+  /* The name of the animation */
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  /* The duration of the animation */
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  /* Make the element visible */
+  visibility: visible;
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
 .scribe {
 	margin-top: 50px;
 }
@@ -237,18 +283,140 @@ a {
 	crossorigin="anonymous">
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(
+			function() {
+				$(".slideshow > div:gt(0)").hide();
+
+				setInterval(function() {
+					$('.slideshow > div:first').fadeOut(0).next().fadeIn(
+							0).end().appendTo('.slideshow');
+				}, 3000);
+			});
+</script>
+<script>
+	$(window).scroll(function() {
+		$(".slideanim").each(function() {
+			var pos = $(this).offset().top;
+
+			var winTop = $(window).scrollTop();
+			if (pos < winTop + 600) {
+				$(this).addClass("slide");
+			}
+		});
+
+	});
+</script>
+<script>
+	$(window).scroll(testScroll);
+	var viewed = false;
+
+	function isScrolledIntoView(elem) {
+		var docViewTop = $(window).scrollTop();
+		var docViewBottom = docViewTop + $(window).height();
+
+		var elemTop = $(elem).offset().top;
+		var elemBottom = elemTop + $(elem).height();
+
+		return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+	}
+
+	function testScroll() {
+		if (isScrolledIntoView($(".number")) && !viewed) {
+			viewed = true;
+			$('.n100').each(function() {
+				$(this).prop('Counter', 50).animate({
+					Counter : $(this).text()
+				}, {
+					duration : 300,
+					easing : 'swing',
+					step : function(now) {
+						$(this).text(Math.ceil(now));
+					}
+				});
+			});
+			$('.n200').each(function() {
+				$(this).prop('Counter', 100).animate({
+					Counter : $(this).text()
+				}, {
+					duration : 350,
+
+					easing : 'swing',
+					step : function(now) {
+						$(this).text(Math.ceil(now));
+					}
+				});
+			});
+			$('.n300').each(function() {
+				$(this).prop('Counter', 200).animate({
+					Counter : $(this).text()
+				}, {
+					duration : 400,
+					easing : 'swing',
+					step : function(now) {
+						$(this).text(Math.ceil(now));
+					}
+				});
+			});
+			$('.n400').each(function() {
+				$(this).prop('Counter', 300).animate({
+					Counter : $(this).text()
+				}, {
+					duration : 450,
+					easing : 'swing',
+					step : function(now) {
+						$(this).text(Math.ceil(now));
+					}
+				});
+			});
+			$('.n500').each(function() {
+				$(this).prop('Counter', 400).animate({
+					Counter : $(this).text()
+				}, {
+					duration : 500,
+					easing : 'swing',
+					step : function(now) {
+						$(this).text(Math.ceil(now));
+					}
+				});
+			});
+		}
+	}
+</script>
 </head>
 <body>
 	<section class="top">
-		<i class="fa fa-mobile fa-3x" aria-hidden="true"
-			style="font-size: 500px;"></i>
+		<div class="slideshow">
+			<div>
+				<i class="fa fa-mobile fa-3x" aria-hidden="true"
+					style="font-size: 500px;"></i>
+			</div>
+			<div>
+				<i class="fa fa-address-book-o" aria-hidden="true"
+					style="font-size: 300px;"></i>
+			</div>
+			<div>
+				<i class="fa fa-file-text-o" aria-hidden="true"
+					style="font-size: 300px;"></i>
+			</div>
+
+		</div>
+
 		<div class="top-right">
 			<h1>
 				대학 생활을 더 편하고 즐겁게,<strong class="red">에브리데이</strong>
 			</h1>
 			<div class="download">
-				<button type="button" class="google"><strong>Google Play</strong></button>
-				<button type="button" class="apple"><strong>App Store</strong></button>
+				<button type="button" class="google">
+					<i class="fa fa-android" aria-hidden="true"></i> <strong>Google
+						Play</strong>
+				</button>
+				<button type="button" class="apple">
+					<i class="fa fa-apple" aria-hidden="true"></i> <strong>App
+						Store</strong>
+				</button>
 			</div>
 		</div>
 
@@ -267,37 +435,37 @@ a {
 		<div class="number">
 			<div>
 				<p class="num">
-					<strong>100</strong>만
+					<strong class="n100">100</strong>만
+				</p>
+				<p class="detail">등록된 학교</p>
+			</div>
+			<div class="line"></div>
+			<div>
+				<p class="num">
+					<strong class="n200">200</strong>만
+				</p>
+				<p class="detail">시간표 사용</p>
+			</div>
+			<div class="line"></div>
+			<div>
+				<p class="num">
+					<strong class="n300">300</strong>만
+				</p>
+				<p class="detail">중고 거래</p>
+			</div>
+			<div class="line"></div>
+			<div>
+				<p class="num">
+					<strong class="n400">400</strong>만
 				</p>
 				<p class="detail">가입한 대학생</p>
 			</div>
 			<div class="line"></div>
 			<div>
 				<p class="num">
-					<strong>200</strong>만
+					<strong class="n500">500</strong>만
 				</p>
-				<p class="detail">가입한 대학생</p>
-			</div>
-			<div class="line"></div>
-			<div>
-				<p class="num">
-					<strong>300</strong>만
-				</p>
-				<p class="detail">가입한 대학생</p>
-			</div>
-			<div class="line"></div>
-			<div>
-				<p class="num">
-					<strong>400</strong>만
-				</p>
-				<p class="detail">가입한 대학생</p>
-			</div>
-			<div class="line"></div>
-			<div>
-				<p class="num">
-					<strong>500</strong>만
-				</p>
-				<p class="detail">가입한 대학생</p>
+				<p class="detail">등록된 게시글</p>
 			</div>
 		</div>
 	</section>
@@ -315,15 +483,15 @@ a {
 		</p>
 		<div class="icons">
 			<div class="icon">
-				<i class="fa fa-lock fa-3x set " aria-hidden="true"></i>
+				<i class="fa fa-lock fa-3x set slideanim" aria-hidden="true"></i>
 				<p class="scribe">학교 인증</p>
 			</div>
 			<div class="icon">
-				<i class="fa fa-shield fa-3x set" aria-hidden="true"></i>
+				<i class="fa fa-shield fa-3x set slideanim" aria-hidden="true"></i>
 				<p class="scribe">익명 시스템</p>
 			</div>
 			<div class="icon">
-				<i class="fa fa-users fa-3x set" aria-hidden="true"></i>
+				<i class="fa fa-users fa-3x set slideanim" aria-hidden="true"></i>
 				<p class="scribe">재학생 참여</p>
 			</div>
 		</div>
