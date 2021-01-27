@@ -337,6 +337,10 @@ input[type="text"]:focus {
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	crossorigin="anonymous">
+<link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
 </head>
 <body>
 

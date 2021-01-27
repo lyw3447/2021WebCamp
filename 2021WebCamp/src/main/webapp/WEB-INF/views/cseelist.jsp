@@ -369,6 +369,8 @@ span {
 	margin: 5px;
 }
 </style>
+<link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon"> <!--favicon 설정 -->
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> <!--favicon 설정 -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>

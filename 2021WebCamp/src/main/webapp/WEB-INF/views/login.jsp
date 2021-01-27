@@ -84,6 +84,10 @@ a {
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	crossorigin="anonymous">
+<link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
 </head>
 <body>
 	<!-- <img src='../img/snowman.jpg' height="250"> -->
@@ -97,10 +101,10 @@ a {
 
 		<form method="post" action="loginOk">
 			<div>
-				<input type='text' name='userid' value="admin"/>
+				<input type='text' name='userid' value="admin" />
 			</div>
 			<div>
-				<input type='password' name='password' value="1234"/>
+				<input type='password' name='password' value="1234" />
 			</div>
 			<button type='submit'>로그인</button>
 		</form>
