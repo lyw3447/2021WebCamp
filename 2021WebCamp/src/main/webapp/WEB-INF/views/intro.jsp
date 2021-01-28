@@ -22,8 +22,8 @@ section {
 
 .top {
 	background-color: #f5f5f5;
-	height: 600px;
 	text-align: center;
+	height: 650px;
 }
 
 .fa-mobile {
@@ -82,7 +82,7 @@ h1 {
 }
 
 .middle {
-	height: 500px;
+	
 }
 
 .number {
@@ -117,12 +117,12 @@ h2 {
 }
 
 .bottom {
-	height: 500px;
 	background-color: #f5f5f5;
 }
 
 .icons {
 	text-align: center;
+	padding: 30px;
 }
 
 .icon {
@@ -149,44 +149,53 @@ h2 {
 	visibility: visible;
 }
 
-@
-keyframes slide { 0% {
-	opacity: 0;
-	transform: translateY(70%);
+/* 이부분 자동정렬 안되게 ! */
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
 }
 
-100
-%
-{
-opacity
-:
-1;
-transform
-:
-translateY(
-0%
-);
+/*
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
-}
-@
--webkit-keyframes slide { 0% {
-	opacity: 0;
-	-webkit-transform: translateY(70%);
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
 }
 
-100
-%
-{
-opacity
-:
-1;
--webkit-transform
-:
-translateY(
-0%
-);
-}
-}
+*/
+
 .scribe {
 	margin-top: 50px;
 }
@@ -227,11 +236,7 @@ a {
 	display: block;
 }
 
-@media screen and (max-width: 600px) {
-	.right {
-		position: absolute;
-	}
-}
+
 
 .fa-calendar { /*Logo*/
 	color: #c12525;
@@ -302,6 +307,60 @@ a {
 	margin: 0 10px;
 	border: 1px solid #d6d6d6;
 }
+
+@media screen and (max-width: 1000px) {
+	section {
+		padding: 0;
+		height: 20%;
+	}
+	.right {
+		position: relative;
+	}
+	
+	.btn {
+		justify-content: center;
+		display: grid;
+		margin-bottom: 30px;
+	}
+	
+	.list {
+		display: none;
+	}
+	
+	.top {
+		height: 750px;
+	}
+	
+	.top-right {
+		margin: 0px;
+		padding-bottom: 40px;
+	}
+	
+	h1 {
+		margin: 30px;
+		font-size: 24px;
+		text-align: center;
+		width: auto;
+		position: unset;
+		top: unset;
+	}
+	
+	.download {
+		position: relative;
+		top: unset;
+	}
+	
+	.fa-mobile {
+		padding: 0;
+		margin-left: 0;
+	}
+	
+	.fa-address-book-o, .fa-file-text-o {
+		padding: 100px;
+		margin-left: 0;
+	}
+
+}
 </style>
 <link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <!--favicon 설정 -->
@@ -316,15 +375,16 @@ a {
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-	$(document).ready(
-			function() {
-				$(".slideshow > div:gt(0)").hide();
+	  $(document).ready(
+		function() {
+			$(".slideshow > div:gt(0)").hide();
 
-				setInterval(function() {
-					$('.slideshow > div:first').fadeOut(0).next().fadeIn(0)
-							.end().appendTo('.slideshow');
-				}, 3000);
-			});
+			setInterval(function() {
+				$('.slideshow > div:first').fadeOut(0).next().fadeIn(0)
+						.end().appendTo('.slideshow');
+			}, 3000);
+		}); 
+
 </script>
 <script>
 	$(document).ready(function() {
@@ -449,7 +509,7 @@ a {
 	<section class="top">
 		<div class="slideshow">
 			<div>
-				<i class="fa fa-mobile fa-3x" aria-hidden="true"
+				<i class="fa fa-mobile" aria-hidden="true"
 					style="font-size: 500px;"></i>
 			</div>
 			<div>
@@ -465,7 +525,7 @@ a {
 
 		<div class="top-right">
 			<h1>
-				대학 생활을 더 편하고 즐겁게,<strong class="red">에브리데이</strong>
+				대학 생활을 더 편하고 즐겁게,<strong class="red"><br/>에브리데이</strong>
 			</h1>
 			<div class="download">
 				<button type="button" class="google">
