@@ -123,10 +123,16 @@ a {
 .menu {
 	background-color: #F5F5F5;
 	height: 200px;
-	padding-left: 30%;
 	border-bottom: 1px solid lightgrey;
 	margin-bottom: 20px;
-	
+	width: 100%;
+	text-align: center;
+}
+
+.menu-wrap {
+	display: inline-block;
+	text-align: center;
+	overflow: hidden;
 }
 
 .menu ul {
@@ -139,6 +145,7 @@ a {
 
 .menu li {
 	padding: 2px;
+	text-align: left;
 }
 
 .menu li a {
@@ -157,12 +164,11 @@ a {
 .border {
 	border-left: 1px solid lightgrey;
 	float: left;
-	height: 80%;
+	height: 150px;
 	margin-top: 20px;
 }
 
 .page-wrap {
-	min-height: 100%;
 	margin-bottom: 100px;
 }
 
@@ -369,8 +375,10 @@ span {
 	margin: 5px;
 }
 </style>
-<link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon"> <!--favicon 설정 -->
-<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> <!--favicon 설정 -->
+<link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -420,50 +428,52 @@ span {
 	</div>
 
 	<div class="menu">
-		<div class="border"></div>
-		<ul>
-			<li><a href="csee" class="here">자유게시판</a></li>
-			<li><a href="#">비밀게시판</a></li>
-			<li><a href="#">졸업생게시판</a></li>
-			<li><a href="#">새내기게시판</a></li>
-			<li><a href="#">장터게시판</a></li>
-			<li><a href="#">홍보게시판</a></li>
-			<li><a href="#">동아리/학회</a></li>
-		</ul>
-		<div class="border"></div>
-		<ul>
-			<li><a href="#">정보게시판</a></li>
-			<li><a href="#">취업/진로</a></li>
-		</ul>
-		<div class="border"></div>
-		<ul>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-		</ul>
-		<ul>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-		</ul>
-		<ul>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-			<li><a href="#">게시판</a></li>
-		</ul>
-		<div class="border"></div>
+		<div class="menu-wrap">
+			<div class="border"></div>
+			<ul>
+				<li><a href="csee" class="here">자유게시판</a></li>
+				<li><a href="#">비밀게시판</a></li>
+				<li><a href="#">졸업생게시판</a></li>
+				<li><a href="#">새내기게시판</a></li>
+				<li><a href="#">장터게시판</a></li>
+				<li><a href="#">홍보게시판</a></li>
+				<li><a href="#">동아리/학회</a></li>
+			</ul>
+			<div class="border"></div>
+			<ul>
+				<li><a href="#">정보게시판</a></li>
+				<li><a href="#">취업/진로</a></li>
+			</ul>
+			<div class="border"></div>
+			<ul>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">게시판</a></li>
+			</ul>
+			<div class="border"></div>
+		</div>
 	</div>
 
 	<div class="page-wrap">
@@ -570,6 +580,5 @@ span {
 
 	</div>
 	<p class="sample">이 웹사이트는 웹서비스 개발 연습 목적으로 만들어졌습니다.</p>
-
 </body>
 </html>
