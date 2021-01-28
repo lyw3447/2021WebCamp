@@ -30,7 +30,7 @@ section {
 	padding-top: 100px;
 	display: inline-block;
 	margin-left: -400px;
-	color: #708090;
+	color: #88906f;
 }
 
 .fa-address-book-o {
@@ -44,7 +44,7 @@ section {
 	padding-top: 200px;
 	display: inline-block;
 	margin-left: -400px;
-	color: #88906f;
+	color: #708090;
 }
 
 .top-right {
@@ -138,38 +138,54 @@ h2 {
 	margin-top: 23px;
 }
 
-.slideanim {visibility:hidden;}
+.slideanim {
+	visibility: visible;
+} /* 원래 invisible인데 화면 height가 1000px 이상이면 실행이 되지 않음 */
 .slide {
-  /* The name of the animation */
-  animation-name: slide;
-  -webkit-animation-name: slide;
-  /* The duration of the animation */
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
-  /* Make the element visible */
-  visibility: visible;
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
 }
 
-/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
-@keyframes slide {
-  0% {
-    opacity: 0;
-    transform: translateY(70%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+@
+keyframes slide { 0% {
+	opacity: 0;
+	transform: translateY(70%);
 }
-@-webkit-keyframes slide {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(70%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0%);
-  }
+
+100
+%
+{
+opacity
+:
+1;
+transform
+:
+translateY(
+0%
+);
+}
+}
+@
+-webkit-keyframes slide { 0% {
+	opacity: 0;
+	-webkit-transform: translateY(70%);
+}
+
+100
+%
+{
+opacity
+:
+1;
+-webkit-transform
+:
+translateY(
+0%
+);
+}
 }
 .scribe {
 	margin-top: 50px;
@@ -209,6 +225,12 @@ a {
 	background-color: #fff;
 	border-left: 1px solid #d6d6d6;
 	display: block;
+}
+
+@media screen and (max-width: 600px) {
+	.right {
+		position: absolute;
+	}
 }
 
 .fa-calendar { /*Logo*/
@@ -281,8 +303,10 @@ a {
 	border: 1px solid #d6d6d6;
 }
 </style>
-<link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon"> <!--favicon 설정 -->
-<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> <!--favicon 설정 -->
+<link rel=" shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+<!--favicon 설정 -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -297,28 +321,29 @@ a {
 				$(".slideshow > div:gt(0)").hide();
 
 				setInterval(function() {
-					$('.slideshow > div:first').fadeOut(0).next().fadeIn(
-							0).end().appendTo('.slideshow');
+					$('.slideshow > div:first').fadeOut(0).next().fadeIn(0)
+							.end().appendTo('.slideshow');
 				}, 3000);
 			});
 </script>
 <script>
-$(document).ready(function(){
-	$(window).scroll(function() {
-		$(".slideanim").each(function() {
-			var pos = $(this).offset().top;
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			$(".slideanim").each(function() {
+				var pos = $(this).offset().top;
 
-			var winTop = $(window).scrollTop();
-			if (pos < winTop + 800) { //이부분 screen size에 따라 다름. 다시 확인 필요?!
-				$(this).addClass("slide");
-			}
+				var winTop = $(window).scrollTop();
+				if (pos < winTop + 800) { //이부분 screen size에 따라 다름. 다시 확인 필요?!
+					$(this).addClass("slide");
+				}
+			});
+
 		});
-
-	});
-}) 
+	})
 </script>
 <script>
 	$(window).scroll(testScroll);
+
 	var viewed = false;
 
 	function isScrolledIntoView(elem) {
@@ -395,6 +420,32 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+	<div class="right">
+		<div class="cal">
+			<i class="fa fa-calendar" aria-hidden="true" style="font-size: 35px;"></i>
+		</div>
+		<div class="btn">
+			<button type="button" class="login" onclick="location.href='login'">로그인</button>
+			<button type="button" class="signup" onclick="location.href='#'">에브리데이
+				회원가입</button>
+		</div>
+
+		<div class="list">
+			<p class="find-school">
+				<strong>우리 학교 찾기</strong>
+			</p>
+			<form id="searchForm" action="csee" method="get"
+				style="margin: 0; padding: 0">
+				<div class="div-search">
+					<input type="text" placeholder="찾으시는 학교를 검색하세요."
+						class="no-border search" /> <input type="submit" value="&#xf002;"
+						class="search-bt " />
+				</div>
+			</form>
+
+
+		</div>
+	</div>
 	<section class="top">
 		<div class="slideshow">
 			<div>
@@ -518,32 +569,7 @@ $(document).ready(function(){
 	</section>
 
 
-	<div class="right">
-		<div class="cal">
-			<i class="fa fa-calendar" aria-hidden="true" style="font-size: 35px;"></i>
-		</div>
-		<div class="btn">
-			<button type="button" class="login" onclick="location.href='login'">로그인</button>
-			<button type="button" class="signup" onclick="location.href='#'">에브리데이
-				회원가입</button>
-		</div>
 
-		<div class="list">
-			<p class="find-school">
-				<strong>우리 학교 찾기</strong>
-			</p>
-			<form id="searchForm" action="csee" method="get"
-				style="margin: 0; padding: 0">
-				<div class="div-search">
-					<input type="text" placeholder="찾으시는 학교를 검색하세요."
-						class="no-border search" /> <input type="submit" value="&#xf002;"
-						class="search-bt " />
-				</div>
-			</form>
-
-
-		</div>
-	</div>
 
 
 
