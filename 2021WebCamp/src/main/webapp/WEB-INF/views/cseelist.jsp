@@ -169,7 +169,7 @@ a {
 }
 
 .page-wrap {
-	margin-bottom: 100px;
+	
 }
 
 .page-wrap:after {
